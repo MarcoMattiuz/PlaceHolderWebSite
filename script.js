@@ -1,8 +1,8 @@
+
 const imgTag = new Image(),
     canvas = document.getElementById('viewport'),
     ctx = canvas.getContext("2d")
-ctx.canvas.width = window.innerWidth;
-ctx.canvas.height = window.innerHeight;
+resizePage();
 imgTag.onload = drawImg;
 imgTag.src = img_rand();
 var img_border = (canvas.width * 10) / 100 + 50;
@@ -14,6 +14,33 @@ var vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 const title = document.getElementById('mainTitle');
 
 console.log(getOffset(title).left, getOffset(title).top)
+
+
+
+
+
+
+
+
+
+function resizePage() {
+    if (navigator.userAgent.match(/Android/i)
+        || navigator.userAgent.match(/webOS/i)
+        || navigator.userAgent.match(/iPhone/i)
+        || navigator.userAgent.match(/iPad/i)
+        || navigator.userAgent.match(/iPod/i)
+        || navigator.userAgent.match(/BlackBerry/i)
+        || navigator.userAgent.match(/Windows Phone/i)) {
+
+        ctx.canvas.width = screen.width
+        ctx.canvas.height = screem.height
+    } else {
+
+
+        ctx.canvas.width = window.innerWidth;
+        ctx.canvas.height = window.innerHeight;
+    }
+}
 
 function img_rand() {
     return "assets/faces/" + getRandomInt(1, 18) + ".jpg";
@@ -37,8 +64,7 @@ function img_setup() {
 }
 
 window.addEventListener("resize", () => {
-    ctx.canvas.width = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
+    resizePage();
     img_setup();
 })
 

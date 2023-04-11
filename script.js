@@ -1,4 +1,3 @@
-preloadImages();
 const imgTag = new Image(),
     canvas = document.getElementById('viewport'),
     ctx = canvas.getContext("2d")
@@ -18,13 +17,7 @@ function img_rand() {
     return "assets/faces/" + getRandomInt(1, 18) + ".jpg";
 }
 
-function preloadImages() {
-    var img = new Image();
-    for (var i = 1; i < 18; i++) {
-        img.src = "assets/faces/" + i + ".jpg";
-    }
 
-}
 
 function img_setup() {
     img_border = (canvas.width * 10) / 100 + 50;

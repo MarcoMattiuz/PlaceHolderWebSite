@@ -56,29 +56,6 @@ function drawImg() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
 
-    // if (velx > 0 && vely > 0) {//viene da sinistra alto - - 
-    //     for (var i = img_border; i > 0; i -= 2) {
-    //         ctx.fillStyle = random_rgba(0.03);
-    //         ctx.fillRect(x - img_border / 20 - i, y - img_border / 20 - i, img_border - i, img_border - i)
-    //     }
-
-    // } else if (velx > 0 && vely < 0) {//viene da sinistra basso - + 
-    //     for (var i = img_border; i > 0; i -= 2) {
-    //         ctx.fillStyle = random_rgba(0.03);
-    //         ctx.fillRect(x - img_border / 20 - i, y + img_border / 20 + i, img_border - i, img_border - i)
-    //     }
-    // } else if (velx < 0 && vely > 0) {//viene da destra alto + -
-    //     for (var i = img_border; i > 0; i -= 2) {
-    //         ctx.fillStyle = random_rgba(0.03);
-    //         ctx.fillRect(x + img_border / 20 + i, y - img_border / 20 - i, img_border - i, img_border - i)
-    //     }
-    // } else if (velx < 0 && vely > 0) {//viene da destra basso + +
-    // for (var i = 0; i < img_border; i += 2) {
-    //     ctx.fillStyle = random_rgba(0.03);
-    //     ctx.fillRect(x + img_border / 20 + i, y + img_border / 20 + i, img_border - i, img_border - i)
-    // }
-    // }
-
     ctx.drawImage(imgTag, x, y, img_border, img_border);
 }
 

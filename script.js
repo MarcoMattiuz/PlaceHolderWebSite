@@ -17,6 +17,14 @@ function img_rand() {
     return "assets/faces/" + getRandomInt(1, 18) + ".jpg";
 }
 
+function preloadImages() {
+    var img = new Image();
+    for (var i = 1; i < 18; i++) {
+        img.src = "assets/faces/" + i + ".jpg";
+    }
+
+}
+
 function img_setup() {
     img_border = (canvas.width * 10) / 100 + 50;
     img_center = img_border / 2;

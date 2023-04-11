@@ -11,13 +11,21 @@ var x = (canvas.width / 2 - img_center) + getRandomInt(0, 100);
 var y = (canvas.height / 2 - img_center) + getRandomInt(0, 100);
 var velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 var vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
+const title = document.getElementById('mainTitle');
 
+console.log(getOffset(title).left, getOffset(title).top)
 
 function img_rand() {
     return "assets/faces/" + getRandomInt(1, 18) + ".jpg";
 }
 
-
+function getOffset(el) {
+    const rect = el.getBoundingClientRect();
+    return {
+        left: rect.left + window.scrollX,
+        top: rect.top + window.scrollY
+    };
+}
 
 function img_setup() {
     img_border = (canvas.width * 10) / 100 + 50;

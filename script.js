@@ -10,8 +10,8 @@ var img_border = (canvas.width * 10) / 100 + 50;
 var img_center = img_border / 2;
 var x = (canvas.width / 2 - img_center) + getRandomInt(0, 100);
 var y = (canvas.height / 2 - img_center) + getRandomInt(0, 100);
-var velx = 3;
-var vely = -3;
+var velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
+var vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 
 
 function img_rand() {
@@ -31,8 +31,8 @@ function img_setup() {
     img_center = img_border / 2;
     x = (canvas.width / 2 - img_center) + getRandomInt(0, 100);
     y = (canvas.height / 2 - img_center) + getRandomInt(0, 100);
-    velx = 3;
-    vely = -3;
+    velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
+    vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 }
 
 window.addEventListener("resize", () => {

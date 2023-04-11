@@ -24,22 +24,22 @@ console.log(getOffset(title).left, getOffset(title).top)
 
 
 function resizePage() {
-    if (navigator.userAgent.match(/Android/i)
-        || navigator.userAgent.match(/webOS/i)
-        || navigator.userAgent.match(/iPhone/i)
-        || navigator.userAgent.match(/iPad/i)
-        || navigator.userAgent.match(/iPod/i)
-        || navigator.userAgent.match(/BlackBerry/i)
-        || navigator.userAgent.match(/Windows Phone/i)) {
+    // if (navigator.userAgent.match(/Android/i)
+    //     || navigator.userAgent.match(/webOS/i)
+    //     || navigator.userAgent.match(/iPhone/i)
+    //     || navigator.userAgent.match(/iPad/i)
+    //     || navigator.userAgent.match(/iPod/i)
+    //     || navigator.userAgent.match(/BlackBerry/i)
+    //     || navigator.userAgent.match(/Windows Phone/i)) {
 
-        ctx.canvas.width = document.documentElement.clientWidth
-        ctx.canvas.height = document.documentElement.clientHeight
-    } else {
+    //     ctx.canvas.width = document.documentElement.clientWidth
+    //     ctx.canvas.height = document.documentElement.clientHeight
+    // } else {
 
 
-        ctx.canvas.width = window.innerWidth;
-        ctx.canvas.height = window.innerHeight;
-    }
+    ctx.canvas.width = window.innerWidth;
+    ctx.canvas.height = window.innerHeight;
+    // }
 }
 
 function img_rand() {

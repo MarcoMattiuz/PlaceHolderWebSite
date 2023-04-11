@@ -32,8 +32,8 @@ function resizePage() {
         || navigator.userAgent.match(/BlackBerry/i)
         || navigator.userAgent.match(/Windows Phone/i)) {
 
-        ctx.canvas.width = screen.width
-        ctx.canvas.height = screem.height
+        ctx.canvas.width = screen.width * window.devicePixelRatio || 1
+        ctx.canvas.height = screem.height * window.devicePixelRatio || 1
     } else {
 
 

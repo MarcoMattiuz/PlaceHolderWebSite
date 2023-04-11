@@ -1,3 +1,4 @@
+preloadImages();
 const imgTag = new Image(),
     canvas = document.getElementById('viewport'),
     ctx = canvas.getContext("2d")

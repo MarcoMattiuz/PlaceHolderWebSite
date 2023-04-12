@@ -108,11 +108,10 @@ function draw() {
     }
 
     if (range(canvas.height - img_border + vely, canvas.height - img_border, y)) imgTag.src = "assets/faces/15.jpg";
-    if (range(0, velx, x)) imgTag.src = "assets/faces/18.jpg"
-    if (range(0, vely, y)) imgTag.src = "assets/faces/9.jpg"
-    if (range(canvas.width - img_border + velx, canvas.width - img_border, x)) imgTag.src = "assets/faces/11.jpg"
-
-    if (range(0, velx, x) && range(0, vely, y) || // left top
+    else if (range(0, velx, x)) imgTag.src = "assets/faces/18.jpg"
+    else if (range(0, vely, y)) imgTag.src = "assets/faces/9.jpg"
+    else if (range(canvas.width - img_border + velx, canvas.width - img_border, x)) imgTag.src = "assets/faces/11.jpg"
+    else if (range(0, velx, x) && range(0, vely, y) || // left top
         range(0, velx, x) && range(canvas.height - img_border + vely, canvas.height - img_border, y) || // left bottom
         range(canvas.width - img_border + velx, canvas.width - img_border, x) && range(0, vely, y) || //right top
         range(canvas.width - img_border + velx, canvas.width - img_border, x) && range(0, velx, x) && range(canvas.height - img_border + vely, canvas.height - img_border, y)) { // right bottom

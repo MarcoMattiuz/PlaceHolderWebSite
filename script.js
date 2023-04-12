@@ -1,4 +1,3 @@
-
 const imgTag = new Image(),
     canvas = document.getElementById('viewport'),
     ctx = canvas.getContext("2d")
@@ -7,8 +6,8 @@ imgTag.onload = drawImg;
 imgTag.src = img_rand();
 var img_border = (canvas.width * 10) / 100 + 50;
 var img_center = img_border / 2;
-var x = (canvas.width / 2 - img_center) + getRandomInt(0, 100);
-var y = (canvas.height / 2 - img_center) + getRandomInt(0, 100);
+x = 0; //(canvas.width / 2 - img_center) + getRandomInt(0, 100)
+y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100)
 var velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 var vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 const title = document.getElementById('mainTitle');
@@ -57,8 +56,8 @@ function getOffset(el) {
 function img_setup() {
     img_border = (canvas.width * 10) / 100 + 50;
     img_center = img_border / 2;
-    x = (canvas.width / 2 - img_center) + getRandomInt(0, 100);
-    y = (canvas.height / 2 - img_center) + getRandomInt(0, 100);
+    x = 0; //(canvas.width / 2 - img_center) + getRandomInt(0, 100)
+    y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100)
     velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
     vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 }

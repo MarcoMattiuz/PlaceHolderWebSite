@@ -87,8 +87,8 @@ function getOffset(el) {
 function img_setup() {
     img_border = (canvas.width * 10) / 100 + 50;
     img_center = img_border / 2;
-    x = 0; //(canvas.width / 2 - img_center) + getRandomInt(0, 100)
-    y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100)
+    //x = 0; //(canvas.width / 2 - img_center) + getRandomInt(0, 100)
+    //y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100)
     velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
     vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 }

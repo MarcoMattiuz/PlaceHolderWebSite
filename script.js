@@ -11,12 +11,42 @@ y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100)
 var velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 var vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 const title = document.getElementById('mainTitle');
-
+var titleLeft = getOffset(title).left;
+var titleTop = getOffset(title).top;
 console.log(getOffset(title).left, getOffset(title).top)
+var cond = false;
+
+function onTitle(x, y) {
 
 
+    //TODO: da finire
+    if ((range(titleLeft, titleLeft + getWidth(title), x)
+        && range(titleTop, titleTop + getHeight(title), y))
+        || (range(x, x + img_border, titleLeft)
+            && range(y, y + img_border, titleTop))) {
+        console.log("TITLE");
+        imgTag.src = "assets/faces/17.jpg";
+        cond = true;
+    } else {
+        if (cond) {
+            imgTag.src = img_rand();
+            cond = false;
+        }
+    }
+
+    // console.log(titleLeft, titleLeft + getWidth(title));
+    // console.log(titleTop, titleTop + getHeight(title));
+
+}
 
 
+function getWidth(box) {
+    return box.offsetWidth;
+}
+
+function getHeight(box) {
+    return box.offsetHeight;
+}
 
 
 
@@ -38,6 +68,7 @@ function resizePage() {
 
     ctx.canvas.width = window.innerWidth;
     ctx.canvas.height = window.innerHeight;
+
     // }
 }
 
@@ -64,6 +95,8 @@ function img_setup() {
 
 window.addEventListener("resize", () => {
     resizePage();
+    titleLeft = getOffset(title).left;
+    titleTop = getOffset(title).top;
     img_setup();
 })
 
@@ -87,14 +120,15 @@ function random_rgba(opacity) {
 
 function drawImg() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-
     ctx.drawImage(imgTag, x, y, img_border, img_border);
 }
 
 
 function draw() {
     drawImg();
+
+    onTitle(x, y);
+
     if (x + velx > canvas.width - img_border || x + velx < img_center - img_border / 2) {
         velx = -velx;
         console.log("X: ", x, " \nY: ", y);

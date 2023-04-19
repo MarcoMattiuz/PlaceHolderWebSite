@@ -16,28 +16,28 @@ var titleTop = getOffset(title).top;
 console.log(getOffset(title).left, getOffset(title).top)
 var cond = false;
 
-function onTitle(x, y) {
+// function onTitle(x, y) {
 
 
-    //TODO: da finire
-    if ((range(titleLeft, titleLeft + getWidth(title), x)
-        && range(titleTop, titleTop + getHeight(title), y))
-        || (range(x, x + img_border, titleLeft)
-            && range(y, y + img_border, titleTop))) {
-        console.log("TITLE");
-        imgTag.src = "assets/faces/17.jpg";
-        cond = true;
-    } else {
-        if (cond) {
-            imgTag.src = img_rand();
-            cond = false;
-        }
-    }
+//     //TODO: da finire
+//     if ((range(titleLeft, titleLeft + getWidth(title), x)
+//         && range(titleTop, titleTop + getHeight(title), y))
+//         || (range(x, x + img_border, titleLeft)
+//             && range(y, y + img_border, titleTop))) {
+//         console.log("TITLE");
+//         imgTag.src = "assets/faces/17.jpg";
+//         cond = true;
+//     } else {
+//         if (cond) {
+//             imgTag.src = img_rand();
+//             cond = false;
+//         }
+//     }
 
-    // console.log(titleLeft, titleLeft + getWidth(title));
-    // console.log(titleTop, titleTop + getHeight(title));
+//     // console.log(titleLeft, titleLeft + getWidth(title));
+//     // console.log(titleTop, titleTop + getHeight(title));
 
-}
+// }
 
 
 function getWidth(box) {
@@ -88,7 +88,7 @@ function img_setup() {
     img_border = (canvas.width * 10) / 100 + 50;
     img_center = img_border / 2;
     //x = 0; //(canvas.width / 2 - img_center) + getRandomInt(0, 100)
-    //y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100)
+    //y = 0; //(canvas.height / 2 - img_center) + getRandomInt(0, 100) /lol
     velx = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
     vely = 3 * (getRandomInt(0, 100) > 50 ? 1 : -1);
 }
@@ -127,7 +127,7 @@ function drawImg() {
 function draw() {
     drawImg();
 
-    onTitle(x, y);
+    // onTitle(x, y);
 
     if (x + velx > canvas.width - img_border || x + velx < img_center - img_border / 2) {
         velx = -velx;
